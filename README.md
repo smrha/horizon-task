@@ -8,3 +8,4 @@ cd ..
 cd frontend
 npx create-react-app gui
 npm install antd
+npm install axios
