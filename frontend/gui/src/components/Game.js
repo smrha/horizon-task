@@ -38,12 +38,28 @@ class Game extends Component {
     handleClick(i, j) {
         console.log(this.state.time_count[0])
         if (this.state.level == i) {
-            this.setState({
-                level: this.state.level + 1,
-                choices: this.state.choices.concat(j),
-                time_count: this.state.time_count.concat(Date.now())
-            })
+            if (j) {
+                this.setState({
+                    level: this.state.level + 1,
+                    choices: this.state.choices.concat(this.state.list2[i]),
+                    time_count: this.state.time_count.concat(Date.now())
+                })
+            } else {
+                this.setState({
+                    level: this.state.level + 1,
+                    choices: this.state.choices.concat(this.state.list1[i]),
+                    time_count: this.state.time_count.concat(Date.now())
+                })
+            }
+            
         }
+        // if (this.state.level == i) {
+        //     this.setState({
+        //         level: this.state.level + 1,
+        //         choices: this.state.choices.concat(j),
+        //         time_count: this.state.time_count.concat(Date.now())
+        //     })
+        // }
     }
 
     render() {
@@ -53,6 +69,7 @@ class Game extends Component {
                     <Board level={this.state.level}
                     list1={this.state.list1}
                     list2={this.state.list2}
+                    choices={this.state.choices}
                     onClick={(i, j) => this.handleClick(i, j)}
                     />
                 </div>

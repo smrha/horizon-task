@@ -27,6 +27,11 @@ class Board extends Component {
                 {
                     this.props.list1.map((listItem, index) => this.renderSquares({listItem}, {index}))
                 }
+                <h2>
+                {
+                    this.props.choices.map(item => <a>{item}</a>)
+                }
+                </h2>
             </div>
             
         )

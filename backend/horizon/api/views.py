@@ -16,7 +16,7 @@ def game(request):
     array_2 = []
 
     for i in range(arr_size):
-        array_1.append(rd.randint(1, 99))
+        array_1.append(rd.randint(1, 88))
         array_2.append(array_1[i]+diff)
     
     rd.shuffle(array_2)
